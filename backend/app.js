@@ -22,7 +22,7 @@ dotenv.config({ path: "./config/config.env" });
 // Enable CORS for the frontend URL (or all origins for testing)
 app.use(
   cors({
-    origin: '*',  
+    origin: 'https://funny-faun-d0dfe4.netlify.app',  
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
