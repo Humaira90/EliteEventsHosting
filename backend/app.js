@@ -22,7 +22,7 @@ dotenv.config({ path: "./config/config.env" });
 // Enable CORS for the frontend URL (or all origins for testing)
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],  // Use your Netlify domain here
+    origin: '*',  
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
