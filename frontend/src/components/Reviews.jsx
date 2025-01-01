@@ -8,7 +8,7 @@ const Reviews = () => {
 
   // Fetch reviews from the backend API
   useEffect(() => {
-    fetch("http://localhost:4000/api/v1/reviews")
+    fetch("https://eliteeventsbackend.onrender.com/api/v1/reviews")
       .then((response) => response.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error("Error fetching reviews:", error));
@@ -33,7 +33,7 @@ const Reviews = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/api/v1/reviews", {
+      const response = await fetch("https://eliteeventsbackend.onrender.com/api/v1/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
