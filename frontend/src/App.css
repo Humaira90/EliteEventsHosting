@@ -1,0 +1,1553 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('/BGp.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: backgroundSlider 20s infinite;
+ 
+
+}
+
+@keyframes backgroundSlider {
+  0% {
+    background-image: url('/BGp.jpg');
+  }
+  33% {
+    background-image: url('/Bgp2.jpg');
+  }
+  66% {
+    background-image: url('/BGp5.jpg');
+  }
+  100% {
+    background-image: url('/BGp.jpg');
+  }
+}
+
+
+.container {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: "Nunito Sans", sans-serif;
+}
+@media (max-width: 1520px) {
+  .container {
+    min-width: 100%;
+    padding: 20px;
+  }
+}
+
+
+/* Navbar Styling */
+nav {
+  display: flex;
+  width: 100%;
+  padding: 15px 30px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #f9f7f1, #e6dccb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+}
+
+nav:hover {
+  background: linear-gradient(to bottom, #e6dccb, #d4c4a4);
+}
+
+/* Logo Styling */
+nav .logo {
+  font-family: "Alex Brush", cursive;
+  font-size: 2rem;
+  color: #a2783a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Navbar Links Container */
+nav .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Adjust the gap to match your navbar spacing */
+}
+
+/* Links Styling */
+nav .navLinks .links {
+  display: flex;
+  gap: 25px; /* Same gap as other links in the navbar */
+}
+
+nav .navLinks .links a {
+  text-decoration: none;
+  font-size: 1rem; /* Same font size as other navbar items */
+  font-weight: 500;
+  color: #333; /* Text color matching the other links */
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for navbar links (including Profile & Login buttons) */
+nav .navLinks .links a:hover {
+  color: #a2783a; /* Hover effect color */
+}
+
+/* Login Button Style */
+.navLinks .login-btn {
+  font-family: 'Nunito Sans', sans-serif; /* Consistent font */
+  font-size: 16px;
+  font-weight: 500;
+  color: #a2783a; /* Consistent text color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 30px; /* Rounded corners like other navbar items */
+  cursor: pointer;
+  text-decoration: none; /* Remove underline for links */
+  display: inline-block;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+  border: 2px solid #a2783a; /* Add border for button outline */
+ 
+}
+
+/* Hover state for login button */
+.navLinks .login-btn:hover {
+  background-color: #a2783a; /* On hover, change the background to gold */
+  color: #fff; /* Change text to white on hover */
+  border-color: #a2783a; /* Ensure border color matches the background */
+}
+
+/* Active state for login button */
+.navLinks .login-btn:active {
+  background-color: #8f662e; /* Darker shade when clicked */
+  color: #fff; /* Ensure text remains white when clicked */
+}
+
+.navLinks .profile-btn {
+  font-family: 'Nunito Sans', sans-serif; /* Consistent font */
+  font-size: 16px;
+  font-weight: 500;
+  color: #a2783a; /* Consistent text color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 30px; /* Rounded corners like other navbar items */
+  cursor: pointer;
+  text-decoration: none; /* Remove underline for links */
+  display: inline-block;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+  border: 2px solid #a2783a; /* Add border for button outline */
+ 
+}
+
+/* Hover state for profile button */
+.navLinks .profile-btn:hover {
+  background-color: #a2783a; /* On hover, change the background to gold */
+  color: #fff; /* Change text to white on hover */
+  border-color: #a2783a; /* Ensure border color matches the background */
+}
+
+/* Active state for profile button */
+.navLinks .profile-btn:active {
+  background-color: #8f662e; /* Darker shade when clicked */
+  color: #fff; /* Ensure text remains white when clicked */
+}
+
+
+/* Hamburger Menu for mobile view */
+nav .hamburger {
+  display: none;
+}
+
+nav svg {
+  font-size: 1.75rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1520px) {
+  nav {
+    min-width: 100%;
+    padding: 25px 20px 40px 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  nav {
+    z-index: 20;
+    position: unset;
+    background: #ffffff63;
+    padding: 10px 30px;
+  }
+
+  nav::after {
+    content: "";
+    display: none;
+  }
+
+  nav .hamburger {
+    display: flex;
+  }
+
+  nav .navLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -100%;
+    background: #a2783a;
+    width: 100%;
+    left: 0;
+    padding: 15px 7.5px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+
+  nav .showmenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 67px;
+    background: #c7bcac;
+    left: 0;
+    padding: 15px 7.5px;
+    transition: 0.3s;
+    margin: 0 15px;
+    width: 96.7vw;
+    margin-right: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    z-index: 2;
+  }
+
+  nav .showmenu .links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav .navLinks .links a {
+    color: #fff;
+  }
+}
+
+@media (max-width: 800px) {
+  nav .showmenu {
+    width: 96vw;
+  }
+}
+
+@media (max-width: 650px) {
+  nav .showmenu {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+
+/* Popup form */
+.popup-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center; /* Horizontally center the modal */
+  align-items: center; /* Vertically center the modal */
+  z-index: 10000; /* Ensure the modal is on top */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+/* When the form should be visible */
+.popup-form.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* To ensure the close button stays correctly positioned */
+  z-index: 10000; /* Higher z-index than the form background */
+}
+
+/* Close button styling */
+.popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #a2783a;
+  z-index: 10001; /* Ensure the close button is above everything else */
+}
+
+/* Form styling */
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #a2783a;
+  margin-bottom: 20px;
+}
+
+.popup-content input:focus,
+.popup-content textarea:focus {
+  outline: none;
+  border-color: #8d6930;
+}
+
+/* Submit button styling */
+.popup-content button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #a2783a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background: #8d6930;
+}
+
+/* Responsive layout for popup */
+@media (max-width: 600px) {
+  .popup-content {
+    width: 90%;
+  }
+}
+.hero {
+  position: relative;
+  height: 800px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ /* Gradient background retained */
+  padding: 20px;
+}
+
+.hero .item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px 30px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  animation: floatUp 1s ease-in-out, cardFloat 6s ease-in-out infinite;
+}
+
+.hero .item h3 {
+  font-family: "Alex Brush", cursive;
+  color: #a2783a;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero .item div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero .item div h1 {
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+.hero .item div p {
+  color: #666;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.hero .item div a {
+  padding: 12px 40px;
+  color: #fff;
+  background: #a2783a;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(162, 120, 58, 0.4);
+}
+
+.hero .item div a:hover {
+  background: #8d6930;
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(141, 105, 48, 0.5);
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 10px;
+  }
+  .hero .item {
+    padding: 30px 20px;
+  }
+  .hero .item h3 {
+    font-size: 24px; /* Reduce heading size */
+  }
+  .hero .item div h1 {
+    font-size: 28px;
+  }
+  .hero .item div p {
+    font-size: 14px;
+  }
+  .hero .item div a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+} 
+/* Contact Section */
+.contact {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  text-align: center;
+}
+
+/* Section Heading */
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; /* Updated font for header */
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #a2783a;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Contact Banners */
+.contact .banner {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact .banner .item {
+  flex: 1;
+  background: linear-gradient(145deg, #ffffff, #e6e0d7);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact .banner .item:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15), -6px -6px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Item Heading and Description */
+.contact .banner .item h4 {
+  font-size: 1.8rem;
+  font-family: "Alex Brush", cursive;
+  color: #a2783a;
+  margin-bottom: 10px;
+}
+
+.contact .banner .item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Contact Form */
+.contact .banner:last-child .item {
+  flex: 1.5;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e6dccb;
+}
+
+.contact .banner:last-child .item h2 {
+  font-size: 2rem;
+  font-family: "Cormorant Garamond", serif;
+  color: #333;
+  margin-bottom: 20px;
+  
+}
+
+.contact .banner:last-child .item form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact .banner:last-child .item form input,
+.contact .banner:last-child .item form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fdfdfd;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact .banner:last-child .item form input:focus,
+.contact .banner:last-child .item form textarea:focus {
+  border-color: #a2783a;
+  box-shadow: 0px 4px 10px rgba(162, 120, 58, 0.3);
+}
+
+.contact .banner:last-child .item form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact .banner:last-child .item form button {
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #a2783a;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact .banner:last-child .item form button:hover {
+  background: #8f662e;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+  .contact .banner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact .banner:last-child .item {
+    flex: 1;
+  }
+}
+
+
+footer {
+  padding: 40px 20px;
+  background-color: #333; /* Dark background for elegance */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  opacity: 0; /* Initially hide the footer */
+  animation: fadeIn 1s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+footer .content {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+  opacity: 0; /* Initially hide the content */
+  animation: slideUp 1s ease-out 0.3s forwards; /* Slide up animation */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+footer .content .section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+footer .content .section h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #a2783a; /* Accent color */
+  margin-bottom: 15px;
+  font-family: "Cormorant Garamond", serif;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for text */
+}
+
+footer .content .section h4:hover {
+  color: #fff;
+  transform: translateX(5px); /* Slight move on hover */
+}
+
+footer .content .section p {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+footer .content .section a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for links */
+}
+
+footer .content .section a:hover {
+  color: #a2783a; /* Accent color */
+  transform: translateX(5px); /* Slight move on hover */
+}
+
+footer .socials {
+  display: flex;
+  gap: 15px;
+  opacity: 0; /* Initially hide social icons */
+  animation: fadeInIcons 1s ease-out 0.6s forwards; /* Fade in animation for icons */
+}
+
+@keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer .socials a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for icons */
+}
+
+footer .socials a:hover {
+  color: #a2783a; /* Accent color */
+  transform: translateY(-5px); /* Move up on hover */
+}
+
+footer .copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #f9f7f1; /* Lighter text for copyright */
+  opacity: 0; /* Initially hide copyright */
+  animation: fadeIn 1s ease-out 0.9s forwards; /* Fade in animation for copyright */
+}
+
+/* Map Section Styling */
+footer .map-section {
+  flex: 2; /* Allow the map to take more space */
+  max-width: 600px; /* Increase maximum width of the map */
+  border-radius: 10px; /* Rounded corners for the map */
+  overflow: hidden; /* Ensures the map stays within its border radius */
+}
+
+footer .map-section iframe {
+  width: 100%;
+  height: 350px; /* Adjust height if necessary */
+  border: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for the map */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+footer .map-section iframe:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Adjust content layout for the map */
+footer .content {
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+@media (max-width: 768px) {
+  footer .map-section {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  footer .map-section iframe {
+    height: 250px; /* Adjust height for smaller screens */
+  }
+}
+
+.about {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  position: relative; /* Ensure the overlay is positioned correctly */
+ 
+}
+
+/* Add an overlay for better text readability */
+
+
+.about h4 {
+  color: #dbd5ca;
+  font-family: "Alex Brush", cursive;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Added subtle text shadow for readability */
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; /* Updated font for header */
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.about p {
+  line-height: 36px;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  color: #080808; /* Make the text color darker for better contrast */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for better readability */
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.services {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; /* Updated font for header */
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.services .banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+}
+.services .banner .item {
+  display: flex;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.services .banner .item img {
+  width: 100%;
+  height: 100%;
+}
+.services .banner .item h3 {
+  position: absolute;
+  background: #fff7ea;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 300;
+  color: #a2783a;
+  bottom: -200%;
+  transition: 0.3s;
+}
+.services .banner .item:hover h3 {
+  bottom: 0;
+  transition: 0.3s;
+}
+@media (max-width: 1280px) {
+  .services .banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+}
+/* Scoped Reviews Section */
+/* Overall Review Section */
+/* Review Section */
+.review-section {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 500px; /* Ensure there's enough height */
+  margin: 50px auto;
+  font-family: "Nunito Sans", sans-serif;
+  animation: fadeIn 1.5s ease-out; /* Add fade-in animation */
+  background: #f9f7f1; ; /* Neutral background color */
+  max-width: 1000px; /* Set a max-width for larger screens */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Heading Styling */
+.review-section h2 {
+  color: #000;
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+  text-align: center;
+  position: relative;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.review-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #a2783a;
+  margin: 10px auto 0;
+  transition: width 0.3s ease;
+}
+
+.review-section h2:hover::after {
+  width: 100px;
+}
+
+/* Review Form */
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-form div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review-form div input,
+.review-form div textarea {
+  flex: 1;
+  min-width: calc(50% - 20px);
+}
+
+/* Styling inputs and textarea like the contact form */
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fdfdfd;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: #a2783a;
+  box-shadow: 0px 4px 10px rgba(162, 120, 58, 0.3);
+}
+
+.review-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Submit Button */
+.review-form button {
+  padding: 10px 30px; /* Smaller button */
+  font-size: 1rem;
+  color: #fff;
+  background: #a2783a;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(162, 120, 58, 0.4); /* Adding box-shadow for the button */
+}
+
+.review-form button:hover {
+  background: #8f662e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(141, 105, 48, 0.5); /* Hover effect */
+}
+
+.review-form button:active {
+  transform: scale(0.95); /* Active effect */
+}
+
+/* Review List */
+.reviews-list {
+  margin-top: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.reviews-list h2 {
+  font-family: "Alex Brush", cursive;
+  color: #2e2b25;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.reviews-list h2:hover {
+  color: #a2783a;
+}
+
+/* Review Item */
+.review-item {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #a2783a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 1s ease-in-out;
+}
+
+.review-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.review-item h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #a2783a;
+  transition: color 0.3s ease;
+}
+
+.review-item h4:hover {
+  color: #8d6930;
+}
+
+.review-item p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Floating button style */
+.floating-btn {
+  position: fixed;
+  top: 80px;  /* Adjust this value to be just below your navbar */
+  right: 20px;
+  background-color: #8d6930;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Floating button style */
+.floating-btn {
+  position: fixed;
+  top: 80px;  /* Adjust this value to be just below your navbar */
+  right: 20px;
+  background-color: #8d6930;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-btn:hover {
+  background-color: #252320;
+  transform: scale(1.1);
+}
+
+.floating-btn:focus {
+  outline: none;
+}
+
+.floating-chatbox-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #a2783a;  /* Using the same goldish brown color as your navbar */
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000;  /* Ensure it stays on top */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-chatbox-btn:hover {
+  background-color: #8d6930;  /* A darker shade for hover effect */
+  transform: scale(1.1);
+}
+
+.floating-chatbox-btn:focus {
+  outline: none;
+}
+/* Style for the floating button */
+.floating-chatbox-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8d6930;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000; /* Ensure it is on top of other elements */
+}
+
+.floating-chatbox-btn:hover {
+  background-color: #252320;
+}
+
+/* Style for the chatbox container */
+.chatbox-container {
+  position: fixed;
+  bottom: 80px; /* Adjust based on button size */
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 9999;
+}
+
+/* Style for chatbox header */
+.chatbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Style for chat messages container */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Style for the list of questions */
+.questions-list {
+  margin-top: 10px;
+}
+
+.question-item {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question-item:hover {
+  background-color: #ddd;
+}
+
+/* Style for chat input */
+.chatbox-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.chatbox-input input {
+  width: 80%;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.chatbox-input button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #8d6930;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style for sent messages */
+.message-user {
+  background-color: #8d6930;
+  color: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.message-bot {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+/* UserProfilePopup Styles */
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+  z-index: 999;
+}
+
+/* Popup Form Style */
+.user-profile-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff7ea; /* Light color from your palette */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 80%; /* Responsive width */
+  max-width: 400px; /* Max width for the popup */
+}
+
+/* Close Button Style */
+.user-profile-popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #a2783a; /* Use a color from your palette */
+}
+
+.user-profile-popup .close-btn:hover {
+  color: #333; /* Darker color on hover */
+}
+
+/* Profile Card */
+.profile-card {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 120px; /* Slightly larger profile picture */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #a2783a; /* Add a border around the image */
+}
+
+/* Form Input and Button Styles */
+.profile-form input,
+.profile-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  font-family: 'Nunito Sans', sans-serif; /* Font from your palette */
+  font-size: 16px;
+}
+
+/* Input focus styling */
+.profile-form input:focus {
+  border-color: #a2783a; /* Highlight border on focus */
+  outline: none;
+}
+
+/* Button Style */
+.profile-form button {
+  background-color: #a2783a; /* Button background color */
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.profile-form button:hover {
+  background-color: #8f662e; /* Darker shade on hover */
+}
+
+.profile-form button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+/* Link style for "Sign up" and "Already have an account?" text */
+.profile-form p {
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  cursor: pointer;
+}
+
+.profile-form p:hover {
+  text-decoration: underline;
+}
+/* Packages Section Container */
+.packages-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+ 
+}
+
+/* Section Title */
+.packages-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; /* Updated font for header */
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Grid Layout for Boxes */
+.package-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Package Card */
+.package-card {
+  background-color: #f9f7f1; /* Slightly transparent card background */
+  border: 1px solid #e6dccb;
+  border-radius: 10px;
+  width: 300px; /* Fixed width for uniformity */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects for Cards */
+.package-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Package Title */
+.package-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #a2783a;
+  margin-bottom: 10px;
+}
+
+/* Package Description */
+.package-card p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  color: #1f1d1d;
+  margin-bottom: 10px;
+}
+
+/* Package Features */
+.package-card ul {
+  list-style-type: disc;
+  margin: 10px 0 15px 20px;
+  padding: 0;
+  color: #3d3939;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Overall Portfolio Section */
+.portfolio {
+  padding: 2rem;
+  background-color: #f9f7f1;
+  font-family: 'Nunito Sans', sans-serif; /* Added new font family */
+}
+
+/* Portfolio Header */
+.portfolio h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; /* Updated font for header */
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.portfolio h2:hover {
+  color: #a2783a; /* Hover effect on the title */
+}
+
+/* Portfolio List Layout */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden; /* Prevents scrollbars in slider */
+}
+
+/* Portfolio Item Styling */
+.portfolio-item {
+  width: 30%;
+  margin: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Portfolio Item Hover Effect */
+.portfolio-item:hover {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio Image Styling */
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Image Hover Effect */
+.portfolio-item img:hover {
+  transform: scale(1.05); /* Zoom effect on image hover */
+}
+
+/* Portfolio Item Heading */
+.portfolio-item h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  font-family: 'Alex Brush', cursive; /* New font for titles */
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.portfolio-item h3:hover {
+  color: #a2783a; /* Hover effect on title text */
+}
+
+/* Slider Container */
+.portfolio-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding-bottom: 1rem; /* Optional: adds spacing below the slider */
+  margin: 0 auto;
+}
+
+.portfolio-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.portfolio-slider::-webkit-scrollbar-thumb {
+  background-color: #a2783a;
+  border-radius: 4px;
+}
+
+.portfolio-slider::-webkit-scrollbar-track {
+  background-color: #f9f7f1;
+}
+
+.portfolio-item {
+  flex: 0 0 auto;
+  width: 250px;
+}
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: 45%;
+  }
+
+  .portfolio-slider {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: 90%;
+  }
+}
+
+
+
+
+
