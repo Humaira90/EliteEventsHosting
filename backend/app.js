@@ -39,6 +39,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Define routes
+// Default route to ensure backend isn't returning a 404 on root
+app.get("/", (req, res) => {
+  res.send("Backend is working!");
+});
+
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/chatbot", chatbotRouter);
