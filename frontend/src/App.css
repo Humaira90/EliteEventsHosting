@@ -499,7 +499,9 @@ nav svg {
   left: 50%;
   transform: translateX(-50%);
 }
-
+.contact h2:hover {
+  color: #a2783a; /* Hover effect on the title */
+}
 /* Contact Banners */
 .contact .banner {
   display: flex;
@@ -798,7 +800,9 @@ footer .content {
   color: #333;
   transition: color 0.3s ease;
 }
-
+.about h2:hover {
+  color: #a2783a; /* Hover effect on the title */
+}
 .about p {
   line-height: 36px;
   letter-spacing: 2px;
@@ -821,6 +825,9 @@ footer .content {
   font-weight: bold;
   color: #333;
   transition: color 0.3s ease;
+}
+.services h2:hover {
+  color: #a2783a; /* Hover effect on the title */
 }
 .services .banner {
   display: grid;
@@ -1371,7 +1378,9 @@ footer .content {
   color: #333;
   transition: color 0.3s ease;
 }
-
+.packages-section h2:hover {
+  color: #a2783a; /* Hover effect on the title */
+}
 /* Grid Layout for Boxes */
 .package-grid {
   display: flex;
