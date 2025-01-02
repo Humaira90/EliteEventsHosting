@@ -7,7 +7,7 @@ const Packages = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/packages")
+      .get("https://eliteeventsbackend.onrender.com/api/v1/packages")
       .then((response) => {
         console.log("Packages fetched:", response.data);
         if (Array.isArray(response.data)) {
